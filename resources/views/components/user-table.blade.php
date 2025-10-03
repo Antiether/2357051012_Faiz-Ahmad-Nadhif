@@ -1,5 +1,8 @@
 <div style="margin-top: 20px;">
     <h1 style="color: #007bff; text-align: center;">Daftar Pengguna</h1>
+    <div style="text-align: right; margin-bottom: 10px;">
+        <a href="{{ route('user.create') }}" style="background-color: #007bff; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px;">Tambah User</a>
+    </div>
     <table style="width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
         <thead>
             <tr style="background-color: #007bff; color: white;">

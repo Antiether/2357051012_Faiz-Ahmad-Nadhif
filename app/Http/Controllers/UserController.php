@@ -27,22 +27,25 @@ class UserController extends Controller
     }
 
     public function index(){
-        $data = [
-            'title' => 'List User',
-            'users' => $this->userModel->getUser(),
-        ];
+    $data = [
+        'title' => 'List User',
+        'users' => UserModel::with('kelas')->get(),
+    ];
 
-        return view('list_user', $data);
-
+    return view('list_user', $data);
     }
+
 
     public function store(Request $request){
-        $this->userModel->create([
-            'nama'=> $request->input('nama'),
-            'npm' => $request->input('npm'),
-            'kelas_id' => $request->input('kelas_id'),
-        ]);
+    $validatedData = $request->validate([
+        'nama' => 'required|string|max:255',
+        'npm' => 'required|string|max:255|unique:user,npm',
+        'kelas_id' => 'required|exists:kelas,id',
+    ]);
 
-        return redirect()->to('/user');
+    $this->userModel->create($validatedData);
+
+    return redirect()->route('user.index')->with('success', 'User created successfully.');
     }
+
 }

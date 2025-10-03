@@ -3,7 +3,7 @@
         <div style="font-weight: bold; font-size: 1.2em;">MyWeb</div>
         <div>
             <a href="/" style="color: white; text-decoration: none; margin-right: 15px;">Home</a>
-            <a href="/users" style="color: white; text-decoration: none; margin-right: 15px;">Users</a>
+            <a href="/user" style="color: white; text-decoration: none; margin-right: 15px;">Users</a>
             <a href="/profile" style="color: white; text-decoration: none;">Profile</a>
         </div>
     </div>
