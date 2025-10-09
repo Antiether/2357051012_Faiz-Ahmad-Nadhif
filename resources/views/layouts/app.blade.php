@@ -24,7 +24,7 @@
 <body>
     @include('components.navbar')
     <div class="container">
-        @yield('contents')
+        @yield('content')
     </div>
     @include('components.footer')
 </body>
